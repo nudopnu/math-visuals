@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './routes/main/main.component';
 import { CosineSimilarityComponent } from './routes/cosine-similarity/cosine-similarity.component';
 import { MatrixComponent } from './components/matrix/matrix.component';
+import { MathJaxDirective } from './directives/math-jax.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     CosineSimilarityComponent,
-    MatrixComponent
+    MatrixComponent,
+    MathJaxDirective
   ],
   imports: [
     BrowserModule,
