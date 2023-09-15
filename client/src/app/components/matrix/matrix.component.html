@@ -1,0 +1,7 @@
+<div class="matrix">
+    <div *ngFor="let j of rows()" class="row">
+        <div *ngFor="let i of columns()" class="cell">
+            <div class="label">{{getLabel(i, j)}}</div>
+        </div>
+    </div>
+</div>

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './routes/main/main.component';
 import { CosineSimilarityComponent } from './routes/cosine-similarity/cosine-similarity.component';
+import { MatrixComponent } from './components/matrix/matrix.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    CosineSimilarityComponent
+    CosineSimilarityComponent,
+    MatrixComponent
   ],
   imports: [
     BrowserModule,

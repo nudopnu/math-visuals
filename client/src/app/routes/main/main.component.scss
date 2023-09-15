@@ -1,4 +1,32 @@
-#sample-container {
+.sample-container {
     width: 700px;
     height: 300px;
+}
+
+#matrices {
+    display: flex;
+}
+
+#matrix {
+    display: grid;
+    width: 180px;
+    height: 180px;
+    grid-template-areas: 
+    'a b'
+    'c d';
+}
+
+#m1 {
+    color: hsl(180, 70%, 80%);
+}
+
+#m2 {
+    color: hsl(125, 71%, 80%);
+}
+
+#times {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 15px;
 }

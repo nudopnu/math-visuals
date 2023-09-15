@@ -1,0 +1,22 @@
+.matrix {
+    border: 1px solid #aaaaaa;
+    display: inline-block;
+    background-color: currentColor;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #aaaaaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    color: #999999;
+}

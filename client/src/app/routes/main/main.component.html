@@ -1,3 +1,23 @@
-<div id="sample-container">
+<div class="sample-container">
     <math-cosine-similarity></math-cosine-similarity>
+</div>
+
+<div id="matrices">
+    <div id="matrix" class="sample-container">
+        <div id="times">
+            <div>AA^T</div>
+        </div>
+        <math-matrix [m]="5" [n]="3" id="m1" [transpose]="true"></math-matrix>
+        <math-matrix [m]="3" [n]="5" id="m2"></math-matrix>
+        <math-matrix [m]="3" [n]="3" id="m2" [label]="false"></math-matrix>
+    </div>
+
+    <div id="matrix" class="sample-container">
+        <div id="times">
+            <div>A^TA</div>
+        </div>
+        <math-matrix [m]="3" [n]="5" id="m2"></math-matrix>
+        <math-matrix [m]="5" [n]="3" id="m1" [transpose]="true"></math-matrix>
+        <math-matrix [m]="5" [n]="5" id="m2" [label]="false"></math-matrix>
+    </div>
 </div>
