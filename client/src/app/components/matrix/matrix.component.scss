@@ -1,5 +1,7 @@
 .matrix {
-    border: 1px solid #aaaaaa;
+    --main-color: #3f3f3f;
+    --main-size: 20px;
+    border: 1px solid var(--main-color);
     display: inline-block;
     background-color: currentColor;
 }
@@ -9,14 +11,14 @@
 }
 
 .cell {
-    width: 18px;
-    height: 18px;
-    border: 1px solid #aaaaaa;
+    width: var(--main-size);
+    height: var(--main-size);
+    border: 1px solid var(--main-color);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .label {
-    color: #777;
+    color: var(--main-color);
 }

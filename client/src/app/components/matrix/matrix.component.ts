@@ -28,7 +28,7 @@ export class MatrixComponent {
   }
 
   getColor(i: number, j: number): string {
-    let defaultFunc: ((i: number, j: number) => string) = (i, j) => `hsl(${((this.params.transpose ? i : j) * 35 + 200) % 180} , 61%, 75%)`;
+    let defaultFunc: ((i: number, j: number) => string) = (i, j) => `hsl(${((this.params.transpose ? i : j) * 45 + 200) % 360}, 70%, 75%)`;
     if (this.params.color == undefined || this.params.color == false) return "";
     if (this.params.color == true) return defaultFunc(i, j);
     else return this.params.color(i, j);
