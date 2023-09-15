@@ -21,7 +21,7 @@ export class MatrixComponent {
   }
 
   getLabel(i: number, j: number): string {
-    let defaultFunc: ((i: number, j: number) => string) = (i, j) => this.ABC[this.params.transpose ? i : j];
+    let defaultFunc: ((i: number, j: number) => string) = (i, j) => this.ABC[this.params.transpose ? i : j] + `_${this.params.transpose ? j: i}`;
     if (this.params.label == undefined || this.params.label == false) return "";
     if (this.params.label == true) return defaultFunc(i, j);
     else return this.params.label(i, j);
