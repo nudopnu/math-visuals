@@ -22,8 +22,7 @@ export class MathJaxDirective implements OnChanges {
     MathJax.texReset();
     const options = MathJax.getMetricsFor(this.target);
     const node = await MathJax.tex2chtmlPromise(this.math, options);
-    this.target.parentElement?.appendChild(node);
-    this.target.style.display = 'none';
+    this.target.appendChild(node);
     MathJax.startup.document.clear();
     MathJax.startup.document.updateDocument();
   }

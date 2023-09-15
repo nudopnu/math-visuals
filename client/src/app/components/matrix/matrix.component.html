@@ -1,7 +1,7 @@
-<div class="matrix">
+<div class="matrix" [ngStyle]="{'background-color': getColor(0,0)}">
     <div *ngFor="let j of rows()" class="row">
-        <div *ngFor="let i of columns()" class="cell">
-            <div class="label">{{getLabel(i, j)}}</div>
+        <div *ngFor="let i of columns()" class="cell" [ngStyle]="{'background-color': getColor(i, j)}">
+            <div class="label" mathJax [math]="getLabel(i, j)"></div>
         </div>
     </div>
 </div>

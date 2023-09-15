@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Value } from 'src/app/routes/types/utility.types';
+import { MatrixParams } from './matrix-params.model';
 
 @Component({
   selector: 'math-matrix',
@@ -7,25 +7,30 @@ import { Value } from 'src/app/routes/types/utility.types';
   styleUrls: ['./matrix.component.scss']
 })
 export class MatrixComponent {
-  @Input() m!: Value<number>;
-  @Input() n!: Value<number>;
-  @Input() transpose: Value<boolean> = false;
-  @Input() label: boolean | ((i: number, j: number) => string) = true;
+
+  @Input() params!: MatrixParams;
 
   ABC = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   columns() {
-    return [...Array(this.n)].map((v, i) => i);
+    return [...Array(this.params.n)].map((v, i) => i);
   }
 
   rows() {
-    return [...Array(this.m)].map((v, i) => i);
+    return [...Array(this.params.m)].map((v, i) => i);
   }
 
   getLabel(i: number, j: number): string {
-    let defaultFunc: ((i: number, j: number) => string) = (i, j) => this.ABC[this.transpose ? i : j];
-    if (this.label == false) return "";
-    if (this.label == true) return defaultFunc(i, j);
-    else return this.label(i, j);
+    let defaultFunc: ((i: number, j: number) => string) = (i, j) => this.ABC[this.params.transpose ? i : j];
+    if (this.params.label == undefined || this.params.label == false) return "";
+    if (this.params.label == true) return defaultFunc(i, j);
+    else return this.params.label(i, j);
+  }
+
+  getColor(i: number, j: number): string {
+    let defaultFunc: ((i: number, j: number) => string) = (i, j) => `hsl(${((this.params.transpose ? i : j) * 35 + 200) % 180} , 61%, 75%)`;
+    if (this.params.color == undefined || this.params.color == false) return "";
+    if (this.params.color == true) return defaultFunc(i, j);
+    else return this.params.color(i, j);
   }
 }
