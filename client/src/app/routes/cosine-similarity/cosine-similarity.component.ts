@@ -59,10 +59,10 @@ export class CosineSimilarityComponent implements AfterViewInit {
       },
     });
 
-    const line1Pos = [0, 1];
+    const line1Pos = [() => 0, () => 1];
     this.createLine({
       board: board2,
-      startPos: [0, 0],
+      startPos: [() => 0, () => 0],
       endPos: line1Pos,
       attributes: {
         ...lineAttributes,
@@ -87,7 +87,7 @@ export class CosineSimilarityComponent implements AfterViewInit {
       },
     });
 
-    board2.create('angle', [line2Pos, [0, 0], line1Pos], {
+    board2.create('angle', [line2Pos, [() => 0, () => 0], line1Pos], {
       radius: 0.3,
       name: () => `\\[\\varphi=${slider.Value().toFixed(2)}\\pi\\]`
     });
